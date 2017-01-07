@@ -41,3 +41,9 @@ for col in df1.columns:
         else:
             meanval = df1.ix[df1[col].notnull() & trainfilt, col].mean()
             df1[col] = df1[col].fillna(meanval)
+
+
+ys = (df1['ad'].str.strip() == 'ad.' ).astype(int).values
+xcols = [col for col in df1.columns if col !='ad']
+X_train, X_valid, X_test = df1.ix[trainfilt, xcols].values, df1.ix[validfilt, xcols].values, df1.ix[testfilt, xcols].values
+y_train, y_valid, y_test = ys[trainfilt], ys[validfilt], ys[testfilt]
