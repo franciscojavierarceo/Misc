@@ -13,9 +13,6 @@ from sklearn.grid_search import GridSearchCV
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
-# Need to run this using:
-#  python train.py ./datafiles/
-
 def cleandata(inputdf, trainfilt, meanvaldf):
 	"""
 	Parameters 
@@ -103,3 +100,5 @@ def main(pth, meanvaldf):
 if __name__ == "__main__":
 	path = sys.argv[1]
 	main(pth=path, meanvaldf=None)
+
+	#  python train.py ./datafiles/
