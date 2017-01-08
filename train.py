@@ -17,6 +17,17 @@ from sklearn.model_selection import train_test_split
 #  python train.py ./datafiles/
 
 def cleandata(inputdf, trainfilt, meanvaldf):
+	"""
+	Parameters 
+	___________
+
+	inputdf		:pd.DataFrame:	Input data frame of model variables 
+
+	trainfilt: 	:bool: Boolean for filter to limit mean inputations for training and test data
+
+	meanvaldf: 	:pd.DataFrame: Training data mean values for inputation on test data
+
+	"""
 	xdf = inputdf
 	# Converting the columns that were read as character to numeric columns
 	for col in xdf.columns:
@@ -40,6 +51,14 @@ def cleandata(inputdf, trainfilt, meanvaldf):
 	return xdf
 
 def main(pth, meanvaldf):
+	"""
+	Parameters 
+	___________
+
+	pth			:string:		Path identifying input data for training
+	meanvaldf	:pd.DataFrame: 	Training data mean values for inputation on test data
+
+	"""
 	np.random.seed(seed=100)
 	inputfile = 'data'
 	colfile = 'column.names.txt'

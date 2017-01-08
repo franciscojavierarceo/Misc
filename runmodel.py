@@ -8,6 +8,15 @@ import xgboost as xgb
 from sklearn.externals import joblib
 
 def main(traindatapth, testdatapath, inputfile):
+	"""
+	Parameters 
+	___________
+	traindatapth	:string:		Path identifying input data for training
+	testdatapath	:string:		Path identifying input data for model execution
+	inputfile		:string:		Path identifying input data file for model execution
+
+	"""
+
 	if 'ad_classifier.pkl' not in os.listdir(testdatapath):
 		print("Training model")
 		train.main(traindatapth, meanvaldf=None)
