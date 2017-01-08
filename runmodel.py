@@ -25,6 +25,9 @@ def main(traindatapth, testdatapath, inputfile):
 
 	if dfx.shape[1] == (df2.shape[0] + 1):
 		dfx.columns = df2['variable'].tolist() + ['ad']
+	
+	if dfx.shape[1] != (df2.shape[0] + 1):
+		assert dfx.shape[1] != df2.shape[0], "Input data has wrong number of columns"
 
 	df1 = train.cleandata(dfx, None, meanvaldf)
 
